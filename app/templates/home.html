@@ -1,0 +1,95 @@
+{%extends "basehome.html"%}
+
+{% block title %}Home{% endblock title %}
+{%load static%}
+{% block content%}
+{% if user.is_authenticated %}
+
+<!--  <div  class="table-responsive">-->
+<!--        <table class="table table-striped table-sm">-->
+<!--          <thead>-->
+<!--            <tr>-->
+<!--                <th>Register No.</th>-->
+<!--              <th>Name</th>-->
+<!--              <th>Class</th>-->
+
+<!--            </tr>-->
+<!--          </thead>-->
+<!--          <tbody>-->
+<!--           {% for student in students %}-->
+<!--           <td>{{student.regno}}</td>-->
+<!--           <td>{{student.name}}</td>-->
+<!--           <td>{{student.stclass}}</td>-->
+<!--          {% endfor %}-->
+
+<!--          </tbody>-->
+<!--        </table>-->
+<!--      </div>-->
+
+<div>
+
+       <div  class="card" style="width: 18rem;margin:30px;">
+    <a href="{% url 'add-student' %}"><img class="card-img-top" src="{% static 'AddStudent.png' %}" alt="Card image cap"></a>
+  <div class="card-body">
+    <p class="card-text">Add a Student</p>
+  </div>
+</div>
+
+       <div  class="card" style="width: 18rem;margin:30px;">
+    <a href="{% url 'add_class' %}"><img class="card-img-top" src="{% static 'Classroom.png' %}" alt="Card image cap"></a>
+  <div class="card-body">
+    <p class="card-text">Add a Class</p>
+  </div>
+</div>
+
+
+<div  class="card" style="width: 18rem;margin:30px;">
+    <a href="{% url 'detect' %}"><img class="card-img-top" src="{% static 'atten.jpg' %}" alt="Card image cap"></a>
+  <div class="card-body">
+    <p class="card-text">Mark your attendance (Student)</p>
+  </div>
+</div>
+
+
+
+<div  class="card" style="width: 18rem;margin:30px;">
+    <a href="{% url 'stu-list' %}"><img class="card-img-top" src="{% static 'list.png' %}" alt="Card image cap"></a>
+  <div class="card-body">
+    <p class="card-text">Students List</p>
+  </div>
+</div>
+    <div  class="card" style="width: 18rem;margin:30px;">
+    <a href="{% url 'dirss' %}"><img class="card-img-top" src="{% static 'dirs.jpg' %}" alt="Card image cap"></a>
+  <div class="card-body">
+    <p class="card-text">Attendance records</p>
+  </div>
+</div>
+
+
+
+
+<div  class="card" style="width: 18rem;margin:30px;">
+    <a href="{% url 'logout' %}"><img class="card-img-top" src="{% static 'login.jpg' %}" alt="Card image cap"></a>
+  <div class="card-body">
+    <p class="card-text">Logout (Staff)</p>
+  </div>
+</div>
+    </div>
+{% else %}
+<div>
+<div  class="card" style="width: 18rem;margin:30px;">
+    <a href="{% url 'login' %}"><img class="card-img-top" src="{% static 'login.jpg' %}" alt="Card image cap"></a>
+  <div class="card-body">
+    <p class="card-text">Login (Staff)</p>
+  </div>
+</div>
+<div  class="card" style="width: 18rem;margin:30px;">
+    <a href="{% url 'detect' %}"><img class="card-img-top" src="{% static 'atten.jpg' %}" alt="Card image cap"></a>
+  <div class="card-body">
+    <p class="card-text">Mark your attendance (Student)</p>
+  </div>
+</div>
+    </div>
+{% endif %}
+
+{% endblock content %}

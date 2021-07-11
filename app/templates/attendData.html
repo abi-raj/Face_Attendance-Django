@@ -1,0 +1,26 @@
+{%extends "base.html"%}
+{% block content %}
+<div align="center" style="margin:2% 0 0 0;"><h3>{{date}}</h3></div>
+<div  class="table-responsive" style="margin:1% 0 0 0;padding:5px">
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+                <th>Register No.</th>
+              <th>Name</th>
+              <th>Time</th>
+
+            </tr>
+          </thead>
+          <tbody>
+           {% for d1 in data %}
+            {% for d in d1 %}
+           <td>{{d}}</td>
+          {% endfor %}
+          {% endfor %}
+
+          </tbody>
+        </table>
+      </div>
+
+
+{% endblock content %}

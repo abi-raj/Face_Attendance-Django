@@ -1,0 +1,30 @@
+
+
+<html>
+<head><title>Login</title></head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+{% load crispy_forms_tags %}
+<body>
+<!--Login--> 
+<div style="display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+ height: 200px;
+  position: relative;" class="container py-5">
+  <h1>Login</h1>
+  <form method="POST">
+    {% csrf_token %}
+    {{ login_form|crispy }}
+    <button class="btn btn-primary" type="submit">Login</button>
+     {% if messages %}
+        {% for message in messages %}
+          <script>M.toast({html: "{{message}}", classes: 'blue rounded', displayLength:2000});</script>
+        {% endfor %}
+    {% endif %}
+  </form>
+
+</div>
+
+</body>
+</html>

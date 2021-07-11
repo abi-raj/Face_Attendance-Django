@@ -1,0 +1,13 @@
+{%extends "base.html"%}
+{% block content %}
+<h4 style="margin : 30px 50px;">Classes</h4>
+<div style="margin : 30px 50px;">
+
+
+    {% for file in files %}
+
+    <a href="/data/{{file}}/{{path}}"><li>{{file}}</li></a>
+{% endfor %}
+</div>
+
+{% endblock content %}

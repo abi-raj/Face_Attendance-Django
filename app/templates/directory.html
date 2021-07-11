@@ -1,0 +1,10 @@
+{%extends "base.html"%}
+{% block content %}
+<h4 style="margin : 30px 50px;">Dates</h4>
+<div style="margin : 30px 50px;" >
+{% for dir in dirs %}
+
+    <a href="/files/{{dir}}"><li>{{dir}}</li></a>
+{% endfor %}
+</div>
+{% endblock content %}
